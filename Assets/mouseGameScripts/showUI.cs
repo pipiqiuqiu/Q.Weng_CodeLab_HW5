@@ -9,6 +9,10 @@ public class showUI : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            PlayerScore score = other.GetComponentInParent<PlayerScore>();
+            if (score != null)
+                score.AddCollectedItem();
+
             if (targetSprite != null)
                 targetSprite.enabled = true;
 
